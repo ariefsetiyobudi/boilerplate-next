@@ -1,0 +1,2 @@
+# boilerplate
+NextJS Boilerplate

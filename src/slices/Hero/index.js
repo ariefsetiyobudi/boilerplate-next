@@ -24,6 +24,7 @@ const Hero = ({ slice }) => {
           field={backgroundImage}
           alt=""
           fill={true}
+          priority={true}
           className="pointer-events-none select-none object-cover opacity-40"
         />
       )}

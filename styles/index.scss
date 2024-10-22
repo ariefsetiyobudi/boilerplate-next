@@ -1,0 +1,31 @@
+@import './base/reset';
+
+// -------------------------------- U T I L S ---------------------------------------
+
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/vendors';
+@import './utils/responsive';
+
+// ------------------------------- S H A R E D --------------------------------------
+
+@import './shared/descriptions';
+@import './shared/titles';
+@import './shared/links';
+@import './shared/pages';
+
+// --------------------------------- B A S E ----------------------------------------
+
+@import './base/fonts';
+@import './base/base';
+
+// --------------------------- C O M P O N E N T S ----------------------------------
+
+@import './components/header';
+
+// --------------------------------- P A G E ----------------------------------------
+
+@import './page/home';
+@import './page/tentang';
+@import './page/kontak';

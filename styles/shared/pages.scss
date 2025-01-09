@@ -1,7 +1,7 @@
 @use "../utils/functions";
 
 %page {
-    @extend %cover;
+    @extend %cover !optional;
 
     opacity: 0;
     visibility: hidden;

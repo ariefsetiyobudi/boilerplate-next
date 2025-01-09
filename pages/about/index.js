@@ -7,12 +7,12 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      data: prismicData.home.data
+      data: prismicData.about.data
     }
   }
 }
 
-const Home = ( {data} ) => {
+const About = ( {data} ) => {
   return (
     <>
       <Header/>
@@ -31,4 +31,4 @@ const Home = ( {data} ) => {
   );
 }
 
-export default Home;
+export default About;

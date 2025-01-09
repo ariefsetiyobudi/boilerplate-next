@@ -1,93 +1,37 @@
 @use "../../node_modules/include-media/dist/include-media";
+@use "../utils/variables.scss";
 
-%description-12 {
-  font-size: 1.2rem;
+$desktop : 1280;
+$tablet : 1024;
+$phone : 780;
+$vw : 100vw;
 
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
+%description-small {
+  font-family: variables.$font-neue-haas-unica, sans-serif;
+  font-size: calc(12.5 * $vw /$desktop);
+  font-weight: 300;
+  line-height: 140%;
+
+  @include include-media.media('<=tablet') {
+    font-size: calc(14 * $vw /$tablet);
+  }
+
+  @include include-media.media('<=phone') {
+    font-size: calc(30 * $vw /$phone);
   }
 }
 
-%description-14 {
-  font-size: 1.4rem;
+%description-medium {
+  font-family: variables.$font-neue-haas-unica, sans-serif;
+  font-size: calc(16 * $vw /$desktop);
+  font-weight: 300;
+  line-height: 140%;
 
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
+  @include include-media.media('<=tablet') {
+    font-size: calc(16 * $vw /$tablet);
   }
-}
 
-%description-16 {
-  font-size: 1.6rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
+  @include include-media.media('<=phone') {
+    font-size: calc(32 * $vw /$phone);
   }
-}
-
-%description-17 {
-  font-size: 1.7rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-18 {
-  font-size: 1.8rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-20 {
-  font-size: 2rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-21 {
-  font-size: 2.1rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-22 {
-  font-size: 2.2rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-24 {
-  font-size: 2.4rem;
-
-  @include include-media.media('<phone') {
-    font-size: 3.2rem;
-  }
-}
-
-%description-26 {
-  font-size: 2.68rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-30-5 {
-  font-size: 3.05rem;
-
-  @include include-media.media('<phone') {
-    font-size: 2.68rem;
-  }
-}
-
-%description-32 {
-  font-size: 3.2rem;
 }

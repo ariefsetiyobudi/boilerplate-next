@@ -1,9 +1,43 @@
 require('dotenv').config()
 import * as prismic from '@prismicio/client'
 
-const repositoryName = process.env.PRISMIC_ENDPOINT // Prismic Endpoint URL
-const accessToken = process.env.PRISMIC_ACCESS_TOKEN // Set an access token
+export const initApi = (req) => {
+  return prismic.createClient(process.env.PRISMIC_ENDPOINT, {
+    accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+    req
+  })
+}
 
-const client = prismic.createClient(repositoryName, { accessToken })
+export const handleRequest = async (api) => {
+  const [navigation, home, about, blogs, contact, { results: blogList }] =
+    await Promise.all([
+      api.getSingle('navigation'),
+      api.getSingle('home'),
+      api.getSingle('about'),
+      api.getSingle('blogs'),
+      api.getSingle('contact'),
+      api.getByType('blog')
+    ])
 
-export default client
+  return {
+    navigation,
+    home,
+    about,
+    blogs,
+    contact,
+    blogList
+  }
+}
+
+export const linkResolver = (doc) => {
+  if (doc.type === "about" || doc.type === "blogs" || doc.type === "contact") {
+    return `/${doc.uid}`;
+  }
+  if (doc.type === "blogs") {
+    return `/blog`;
+  }
+  if (doc.type === "blog") {
+    return `/blog/${doc.uid}`;
+  }
+  return null;
+}

@@ -1,5 +1,7 @@
 @use "../../node_modules/include-media/dist/include-media";
 @use "../utils/variables";
+@use "../utils/functions";
+@use "../shared/descriptions";
 
 *,
 *::after,
@@ -10,26 +12,19 @@
 
 html {
   $vw: 100vw;
-  font-size: calc($vw / 1920px * 10px);
-  line-height: 1;
-  overflow: hidden;
-  background: variables.$color-white;
-  color: variables.$color-black;
+  font-size: calc($vw / 1280px * 10px);
+  line-height: 100%;
 
-  @include include-media.media('<phone') {
-    font-size: calc($vw / 750px * 10px);
+  @include include-media.media('<=tablet') {
+    font-size: calc($vw / 1024px * 10px);
+  }
+
+  @include include-media.media('<=phone') {
+    font-size: calc($vw / 768px * 10px);
   }
 }
 
 body {
-  @extend %description-16;
-  font-family: variables.$font-neue-haas-unica;
-}
-
-a {
-  font-family: variables.$font-neue-haas-unica;
-  color: inherit;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
+  @extend %description-small;
+  overscroll-behavior: none;
 }

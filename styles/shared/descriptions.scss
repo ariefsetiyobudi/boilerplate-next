@@ -1,37 +1,40 @@
 @use "../../node_modules/include-media/dist/include-media";
-@use "../utils/variables.scss";
+@use "../utils/variables";
 
 $desktop : 1280;
 $tablet : 1024;
-$phone : 780;
+$phone : 768;
 $vw : 100vw;
 
 %description-small {
-  font-family: variables.$font-neue-haas-unica, sans-serif;
-  font-size: calc(12.5 * $vw /$desktop);
+  font-family: variables.$font-anybody, sans-serif;
+  font-size: calc(10.85 * $vw /$desktop);
   font-weight: 300;
   line-height: 140%;
 
-  @include include-media.media('<=tablet') {
-    font-size: calc(14 * $vw /$tablet);
-  }
-
   @include include-media.media('<=phone') {
-    font-size: calc(30 * $vw /$phone);
+    font-size: calc(28 * $vw /$phone);
   }
 }
 
 %description-medium {
-  font-family: variables.$font-neue-haas-unica, sans-serif;
-  font-size: calc(16 * $vw /$desktop);
+  font-family: variables.$font-anybody, sans-serif;
+  font-size: calc(12 * $vw /$desktop);
   font-weight: 300;
   line-height: 140%;
 
-  @include include-media.media('<=tablet') {
-    font-size: calc(16 * $vw /$tablet);
+  @include include-media.media('<=phone') {
+    font-size: calc(28 * $vw /$phone);
   }
+}
+
+%description-large {
+  font-family: variables.$font-anybody, sans-serif;
+  font-size: calc(16 * $vw /$desktop);
+  font-weight: 400;
+  line-height: 140%;
 
   @include include-media.media('<=phone') {
-    font-size: calc(32 * $vw /$phone);
+    font-size: calc(28 * $vw /$phone);
   }
 }

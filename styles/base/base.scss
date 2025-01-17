@@ -25,6 +25,8 @@ html {
 }
 
 body {
-  @extend %description-small;
+  @extend %description-medium;
+  background: variables.$color-white;
+  color: variables.$color-black;
   overscroll-behavior: none;
 }

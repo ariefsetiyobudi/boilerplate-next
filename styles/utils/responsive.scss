@@ -4,4 +4,4 @@ $breakpoints: (
   'desktop': 1280px,
 ) !default;
 
-@use '../..//node_modules/include-media/dist/include-media' with ($breakpoints: $breakpoints);
+@use '../../node_modules/include-media/dist/include-media' with ($breakpoints: $breakpoints);

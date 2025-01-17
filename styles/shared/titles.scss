@@ -1,65 +1,36 @@
 @use "../../node_modules/include-media/dist/include-media";
-@use "../utils/variables.scss";
+@use "../utils/variables";
 
 $desktop : 1280;
 $tablet : 1024;
-$phone : 780;
+$phone : 768;
 $vw : 100vw;
 
 %title-large {
-  font-family: variables.$font-druk-cyr, sans-serif;
+  font-family: variables.$font-anybody-condensed, sans-serif;
   font-size: calc(200 * $vw /$desktop);
+  font-weight: 700;
+  letter-spacing: -0.2rem;
   line-height: 100%;
 
   @include include-media.media('<=tablet') {
-    font-size: calc(90 * $vw /$tablet);
+    font-size: calc(200 * $vw /$tablet);
   }
 
   @include include-media.media('<=phone') {
-    font-size: calc(120 * $vw /$phone);
+    font-size: calc(200 * $vw /$phone);
     line-height: 90%;
-  }
-}
-
-%title-medium{
-  font-family: variables.$font-druk-cyr, sans-serif;
-  font-size: calc(80 * $vw /$desktop);
-  line-height: 100%;
-
-  @include include-media.media('<=tablet') {
-    font-size: calc(72 * $vw /$tablet);
-  }
-
-  @include include-media.media('<=phone') {
-    font-size: calc(120 * $vw /$phone);
-    line-height: 90%;
-  }
-}
-
-%title-regular {
-  font-family: variables.$font-druk-cyr, sans-serif;
-  font-size: calc(50 * $vw /$desktop);
-  line-height: 100%;
-
-  @include include-media.media('<=tablet') {
-    font-size: calc(44 * $vw /$tablet);
-  }
-
-  @include include-media.media('<=phone') {
-    font-size: calc(100 * $vw /$phone);
   }
 }
 
 %title-small {
-  font-family: variables.$font-druk-cyr, sans-serif;
-  font-size: calc(12.5 * $vw /$desktop);
+  font-family: variables.$font-anybody-condensed, sans-serif;
+  font-size: calc(13 * $vw /$desktop);
+  font-weight: 400;
+  letter-spacing: 0.025rem;
   line-height: 140%;
 
-  @include include-media.media('<=tablet') {
-    font-size: calc(14 * $vw /$tablet);
-  }
-
   @include include-media.media('<=phone') {
-    font-size: calc(30 * $vw /$phone);
+    font-size: calc(35 * $vw /$phone);
   }
 }

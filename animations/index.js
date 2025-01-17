@@ -1,6 +1,6 @@
 import GSAP from "gsap/dist/gsap"
 
-export const titleAnimateIn = element => {
+export const slideUpAnimateIn = element => {
 	GSAP.set(element, {
 	  autoAlpha: 1
 	})
@@ -52,5 +52,50 @@ export const scaleAnimateIn = element => {
 export const animateOut = element => {
 	GSAP.set(element, {
 	  autoAlpha: 0
+	})
+}
+
+export const slideUpAnimations = elements => {
+	elements.forEach((element) => {
+		const children = element.childNodes
+		children.forEach((children) => {
+			const observer = new IntersectionObserver((entries) => {
+				const entry = entries[0]
+				if(entry.isIntersecting) {
+					slideUpAnimateIn(entry.target)
+				} else {
+					animateOut(entry.target)
+				}
+			})
+			observer.observe(children)
+		})
+	})
+}
+
+export const revealAnimations = elements => {
+	elements.forEach((element) => {
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0]
+			if(entry.isIntersecting) {
+				revealAnimateIn(entry.target)
+			} else {
+				animateOut(entry.target)
+			}
+		})
+		observer.observe(element)
+	})
+}
+
+export const scaleAnimations = elements => {
+	elements.forEach((element) => {
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0]
+			if(entry.isIntersecting) {
+				scaleAnimateIn(entry.target)
+			} else {
+				animateOut(entry.target)
+			}
+		})
+		observer.observe(element)
 	})
 }
